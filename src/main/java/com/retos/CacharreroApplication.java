@@ -4,6 +4,7 @@ import com.retos.repository.crud.ClotheRepository;
 import com.retos.repository.crud.OrderRepository;
 import com.retos.repository.crud.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @ autor Paola Martinez
  **/
 @SpringBootApplication
-public class CacharreroApplication {
+public class CacharreroApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(CacharreroApplication.class, args);
