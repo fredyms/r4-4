@@ -34,8 +34,8 @@ public class ClotheController {
      * @return
      */
     @GetMapping("/{id}")
-    public Optional<Clothe> getUser(@PathVariable("id") Integer id) {
-        return clotheServices.getClotheById(id);
+    public Optional<Clothe> getUser(@PathVariable("id") String id) {
+        return clotheServices.getClotheByReference(id);
     }
 
     /**
@@ -63,12 +63,12 @@ public class ClotheController {
     /**
      * Metodo para borrar un usuario
      *
-     * @param cloneId
+     * @param clotheId
      */
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable("id") Integer cloneId) {
-        clotheServices.deleteClothe(cloneId);
+    public void delete(@PathVariable("id") String clotheId) {
+        clotheServices.deleteClothe(clotheId);
     }
 
     /**

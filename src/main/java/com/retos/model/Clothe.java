@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Document(collection = "clothe")
 public class Clothe {
-    private Integer id;
+    @Id
     private String reference;
     private String category;
     private String size;

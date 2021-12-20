@@ -50,13 +50,13 @@ public class ClotheServices {
     /**
      * Metodo para eliminar Clone
      *
-     * @param clotheId
+     * @param clotheReference
      */
 
-    public void deleteClothe(Integer clotheId) {
-        Optional<Clothe> clothe = clotheRepository.findById(clotheId);
+    public void  deleteClothe(String clotheReference) {
+        Optional<Clothe> clothe = clotheRepository.findById(clotheReference);
         if (clothe.isPresent()) {
-            clotheRepository.deleteById(clotheId);
+            clotheRepository.deleteById(clotheReference);
         }
 
     }
@@ -68,16 +68,16 @@ public class ClotheServices {
      * @return
      */
     public Clothe updateclone(Clothe clothe) {
-        if (clothe.getId() != null) {
-            Optional<Clothe> exist = clotheRepository.findById(clothe.getId());
+        if (clothe.getReference() != null) {
+            Optional<Clothe> exist = clotheRepository.findById(clothe.getReference());
             if (clothe.getSize() != null) {
                 exist.get().setSize(clothe.getSize());
             }
             if (clothe.getReference() != null) {
                 exist.get().setReference(clothe.getReference());
             }
-            if (clothe.getId() != null) {
-                exist.get().setId(clothe.getId());
+            if (clothe.getReference() != null) {
+                exist.get().setReference(clothe.getReference());
             }
             if (clothe.getDescription() != null) {
                 exist.get().setDescription(clothe.getDescription());
@@ -101,14 +101,14 @@ public class ClotheServices {
 
     /**
      * Metodo para obtener y retornar un registro de documento de producto
-     * por el valor de su atributo 'id', hacia el metodo 'getCloneById' del
+     * por el valor de su atributo 'Reference', hacia el metodo 'getCloneByReference' del
      * CloneRepository
      *
-     * @param id
+     * @param Reference
      * @return
      */
-    public Optional<Clothe> getClotheById(Integer id) {
-        return clotheRepository.findById(id);
+    public Optional<Clothe> getClotheByReference(String Reference) {
+        return clotheRepository.findById(Reference);
     }
 
     /**

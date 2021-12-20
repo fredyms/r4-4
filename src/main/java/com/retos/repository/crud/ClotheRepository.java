@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @ autor  Martinez
  **/
-public interface ClotheRepository extends MongoRepository<Clothe, Integer> {
+public interface ClotheRepository extends MongoRepository<Clothe, String> {
     /**
      * Listar Clothes que tengan un precio menor o igual al ingresado
      *
